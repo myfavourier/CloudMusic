@@ -1,19 +1,22 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'maven'
 }
 
+def pomName = this.getName()
+def pomVersion = '1.0.0-SNAPSHOT'
+def pomDescription = 'the application/apk for all projects'
+
 android {
-    compileSdkVersion 28
-    buildToolsVersion "30.0.3"
+    compileSdkVersion this.rootProject.android.compileSdkVersion
 
     defaultConfig {
         applicationId "com.example.cloud_music"
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion this.rootProject.android.minSdkVersion
+        targetSdkVersion this.rootProject.android.targetSdkVersion
+        versionCode this.rootProject.android.versionCode
+        versionName this.rootProject.android.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -41,4 +44,22 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+uploadArchives{
+    repositories{
+        mavenDeployer{
+            repository(url: NEXUS_REPOSITORY_URL){
+                authentication(userName: NEXUS_USERNAME, password:NEXUS_PASSWORD)
+            }
+            pom.project{
+                name pomName
+                version pomVersion
+                description pomDescription
+                artifactId pomVersion
+                groupId POM_GROUPID
+                packaging POM_PACKAGING
+            }
+        }
+    }
 }
