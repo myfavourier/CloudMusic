@@ -1,2 +1,13 @@
-include ':app'
+include ':lib_webview'
+include ':lib_video'
+include ':lib_update'
+include ':lib_share'
+include ':lib_qrcode'
+include ':lib_pullalive'
+include ':lib_network'
+include ':lib_image_loader'
+include ':cloud_music'
+include ':lib_commin_ui'
+include ':lib_audio'
+
 rootProject.name = "CloudMusic"
