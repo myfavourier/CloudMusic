@@ -42,8 +42,14 @@ dependencies {
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
-
+    implementation project(':lib_commin_ui')
+    implementation project(':lib_network')
+    implementation project(':lib_image_loader')
     testImplementation 'junit:junit:4.+'
+    //rxjava库
+    implementation rootProject.depsLibs.rxjava
+    implementation rootProject.depsLibs.rxandroid
+    implementation rootProject.depsLibs.eventbus
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.cloud_music.databinding.ActivityHomeBinding
 import com.example.cloud_music.model.CHANNEL
 import com.example.cloud_music.view.home.adapter.HomePagerAdapter
+import com.example.lib_commin_ui.base.BaseActivity
 import net.lucode.hackware.magicindicator.ViewPagerHelper
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter
@@ -16,7 +17,7 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTit
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView
 
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity :  BaseActivity() {
     //activity_home的ViewBinding
     private lateinit var binding: ActivityHomeBinding
     //指定首页要出现的卡片
