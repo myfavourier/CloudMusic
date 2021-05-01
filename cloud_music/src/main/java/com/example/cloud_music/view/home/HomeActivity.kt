@@ -4,9 +4,15 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import android.view.Gravity
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import com.example.cloud_music.R
 import com.example.cloud_music.databinding.ActivityHomeBinding
 import com.example.cloud_music.model.CHANNEL
+import com.example.cloud_music.utils.UserManager
+import com.example.cloud_music.view.LoginActivity
 import com.example.cloud_music.view.home.adapter.HomePagerAdapter
 import com.example.lib_commin_ui.base.BaseActivity
 import net.lucode.hackware.magicindicator.ViewPagerHelper
@@ -17,7 +23,7 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTit
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView
 
 
-class HomeActivity :  BaseActivity() {
+class HomeActivity :  BaseActivity(),View.OnClickListener {
     //activity_home的ViewBinding
     private lateinit var binding: ActivityHomeBinding
     //指定首页要出现的卡片
@@ -33,6 +39,7 @@ class HomeActivity :  BaseActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initView()
+
     }
 
     private fun initView(){
@@ -40,6 +47,11 @@ class HomeActivity :  BaseActivity() {
         mAdapter = HomePagerAdapter(supportFragmentManager, CHANNELS)
         binding.viewpager.adapter = mAdapter
         initMagicIndicator()
+        //登录相关UI
+        binding.unlogginlayout.setOnClickListener(this)
+        binding.toggleview.setOnClickListener {
+            binding.drawerlayout.openDrawer(GravityCompat.START)
+        }
 
     }
     //初始化指示器
@@ -75,5 +87,32 @@ class HomeActivity :  BaseActivity() {
         }
         binding.magicindicator.navigator = commonNavigator
         ViewPagerHelper.bind(binding.magicindicator, binding.viewpager)
+    }
+
+    override fun onClick(view: View) {
+        when (view.id) {
+            R.id.exitlayout -> {
+                finish()
+                System.exit(0)
+            }
+
+            R.id.unlogginlayout -> {
+                if (!UserManager.hasLogined) {
+                    LoginActivity.start(this)
+                } else {
+                    binding.drawerlayout.closeDrawer(Gravity.LEFT)
+                }
+            }
+
+            R.id.toggleview -> {
+                if (binding.drawerlayout.isDrawerOpen(Gravity.LEFT)) {
+                    binding.drawerlayout.closeDrawer(Gravity.LEFT)
+                } else {
+                    binding.drawerlayout.openDrawer(Gravity.LEFT)
+                }
+            }
+
+
+        }
     }
 }
