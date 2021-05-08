@@ -4,8 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.example.cloud_music.R
+import com.example.cloud_music.api.KRequestCenter
 import com.example.cloud_music.databinding.ActivityLoginLayoutBinding
 import com.example.lib_commin_ui.base.BaseActivity
+import com.example.lib_network.okhttp.listener.DisposeDataListener
 
 
 /**
@@ -30,6 +32,7 @@ class LoginActivity : BaseActivity(){
         setContentView(binding.root)
         binding.loginView.setOnClickListener {
             
+
         }
     }
 
