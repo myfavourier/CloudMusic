@@ -1,7 +1,6 @@
 package com.example.cloud_music.utils;
 
-import com.example.cloud_music.model.User
-import java.net.UnknownServiceException
+import com.example.cloud_music.model.user.User
 
 /*
  * 用户管理类，单例对象

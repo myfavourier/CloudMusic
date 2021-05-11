@@ -1,6 +1,6 @@
 package com.example.cloud_music.api
 
-import com.example.cloud_music.model.User
+import com.example.cloud_music.model.user.User
 import com.example.cloud_music.model.discory.BaseRecommandModel
 import com.example.cloud_music.model.discory.BaseRecommandMoreModel
 import com.example.cloud_music.model.friend.BaseFriendModel

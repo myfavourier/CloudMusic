@@ -6,21 +6,25 @@ import android.graphics.Typeface
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.example.cloud_music.R
 import com.example.cloud_music.databinding.ActivityHomeBinding
 import com.example.cloud_music.model.CHANNEL
+import com.example.cloud_music.model.login.LoginEvent
 import com.example.cloud_music.utils.UserManager
-import com.example.cloud_music.view.LoginActivity
+import com.example.cloud_music.view.login.LoginActivity
 import com.example.cloud_music.view.home.adapter.HomePagerAdapter
 import com.example.lib_commin_ui.base.BaseActivity
+import com.example.lib_image_loader.app.ImageLoaderManager
 import net.lucode.hackware.magicindicator.ViewPagerHelper
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 
 class HomeActivity :  BaseActivity(),View.OnClickListener {
@@ -37,6 +41,7 @@ class HomeActivity :  BaseActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
+        EventBus.getDefault().register(this)
         setContentView(binding.root)
         initView()
 
@@ -114,5 +119,21 @@ class HomeActivity :  BaseActivity(),View.OnClickListener {
 
 
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        EventBus.getDefault().unregister(this)
+    }
+
+    /**
+     * 处理登陆事件
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onLoginEvent(event: LoginEvent) {
+        binding.unlogginlayout.visibility = View.GONE
+        binding.avatrview.visibility = View.VISIBLE
+        ImageLoaderManager.getInstance()
+                .displayImageForCircle(binding.avatrview, UserManager.mUser?.data?.photoUrl)
     }
 }
