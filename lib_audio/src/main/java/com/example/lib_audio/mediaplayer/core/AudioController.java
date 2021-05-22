@@ -75,7 +75,7 @@ public class AudioController {
      */
     public void addAudio(AudioBean bean,int index){
         if(mQueue == null){
-            throw new AudioQueueEmptyException("当前播放队列为空")
+            throw new AudioQueueEmptyException("当前播放队列为空");
         }
         int query = queryAudio(bean);
         if(query <= -1){
