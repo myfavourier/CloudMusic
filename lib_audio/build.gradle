@@ -2,7 +2,10 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'maven'
+    id 'org.greenrobot.greendao'
+
 }
+
 
 def pomName = this.getName()
 def pomVersion = '1.0.0-SNAPSHOT'
@@ -47,7 +50,35 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //占位主工程android原生库
+    compileOnly rootProject.depsLibs.appcompact
+    compileOnly rootProject.depsLibs.design
+    compileOnly rootProject.depsLibs.recyclerview
+
+    //占位主工程的greenDao类库
+    compileOnly rootProject.depsLibs.greendao
+    //占位主工程的eventbus库
+    compileOnly rootProject.depsLibs.eventbus
+    //占位主工程的rxjava库
+    compileOnly rootProject.depsLibs.rxjava
+    //占位主工程arouter库
+    compileOnly(rootProject.depsLibs.arouterapi) {
+        exclude group: 'com.android.support'
+    }
+
+    //占位主工程自己源码库
+    compileOnly project(':lib_image_loader')
+    compileOnly project(':lib_commin_ui')
+    compileOnly project(':lib_share')
 }
+
+greendao {
+    //其它配置保持默认,有需要再研究
+    schemaVersion 1 //数据库版本号
+    daoPackage 'com.imooc.lib_audio.mediaplayer.db' //dao,master类所在包
+}
+
 
 
 
