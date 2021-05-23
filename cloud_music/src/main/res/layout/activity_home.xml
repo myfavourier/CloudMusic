@@ -46,6 +46,11 @@
                 android:layout_toEndOf="@id/toggleview" />
 
         </RelativeLayout>
+        <com.example.lib_audio.mediaplayer.view.BottomMusicView
+            android:id="@+id/bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
