@@ -1,6 +1,7 @@
 package com.example.cloud_music.application
 
 import android.app.Application
+import android.content.Context
 import com.example.lib_audio.app.AudioHelper
 
 
@@ -16,6 +17,7 @@ class ImoocVoiceApplication : Application() {
         mInstance = this
         init()
     }
+
 
     private fun init() {
         //视频SDK初始化

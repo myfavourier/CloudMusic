@@ -63,11 +63,10 @@ public class BottomMusicView extends RelativeLayout {
     rootView.setOnClickListener(new OnClickListener() {
       @Override public void onClick(View v) {
         //跳到音乐播放Activitity
-//        MusicPlayerActivity.start((Activity) mContext);
+        //MusicPlayerActivity.start((Activity) mContext);
       }
     });
     mLeftView = rootView.findViewById(R.id.album_view);
-    //让左侧mLeftView不停旋转
     ObjectAnimator animator = ObjectAnimator.ofFloat(mLeftView, View.ROTATION.getName(), 0f, 360);
     animator.setDuration(10000);
     animator.setInterpolator(new LinearInterpolator());
@@ -80,7 +79,7 @@ public class BottomMusicView extends RelativeLayout {
     mPlayView.setOnClickListener(new OnClickListener() {
       @Override public void onClick(View v) {
         //处理播放暂停事件
-        AudioController.getInstance().play();
+        AudioController.getInstance().playOrPause();
       }
     });
     mRightView = rootView.findViewById(R.id.show_list_view);
@@ -114,7 +113,7 @@ public class BottomMusicView extends RelativeLayout {
     showPlayView();
   }
 
-  @Subscribe(threadMode = ThreadMode.MAIN)
+//  @Subscribe(threadMode = ThreadMode.MAIN)
 //  public void onAudioProgrssEvent(AudioProgressEvent event) {
 //    //更新当前view的播放进度
 //  }

@@ -26,7 +26,7 @@ public class CustomMediaPlayer extends MediaPlayer implements MediaPlayer.OnComp
   }
 
   @Override public void setDataSource(String path)
-      throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
+          throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
     super.setDataSource(path);
     mState = Status.INITIALIZED;
   }
