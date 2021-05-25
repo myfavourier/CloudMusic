@@ -4,6 +4,7 @@
     android:id="@id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     >
 
     <!--标题布局-->
@@ -65,10 +66,10 @@
 
     </RelativeLayout>
 
-<!--    <com.imooc.lib_audio.mediaplayer.view.IndictorView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/title_layout" />-->
+    <com.example.lib_audio.mediaplayer.view.IndictorView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_layout" />
 
 
     <!--底部布局-->

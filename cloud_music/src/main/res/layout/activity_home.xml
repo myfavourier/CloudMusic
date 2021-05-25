@@ -54,7 +54,7 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="630dp"
             android:layout_below="@+id/titlelayout"/>
     </RelativeLayout>
     <!--存放侧滑菜单-->
@@ -68,7 +68,7 @@
         >
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_above="@id/divider"
             android:scrollbars="none">
 

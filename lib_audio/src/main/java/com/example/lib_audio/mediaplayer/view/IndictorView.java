@@ -39,6 +39,7 @@ public class IndictorView extends RelativeLayout implements ViewPager.OnPageChan
     private ImageView mImageView;
     private ViewPager mViewPager;
     private MusicPagerAdapter mMusicPagerAdapter;
+    private ImageView mcircleView;
     /*
      * data
      */
@@ -74,6 +75,7 @@ public class IndictorView extends RelativeLayout implements ViewPager.OnPageChan
     private void initView() {
         View rootView = LayoutInflater.from(mContext).inflate(R.layout.indictor_view, this);
         mImageView = rootView.findViewById(R.id.tip_view);
+        mcircleView = rootView.findViewById(R.id.circle_view);
         mViewPager = rootView.findViewById(R.id.view_pager);
         mViewPager.setOverScrollMode(View.OVER_SCROLL_NEVER);
         mMusicPagerAdapter = new MusicPagerAdapter(mQueue, mContext, null);
