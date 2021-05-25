@@ -100,7 +100,7 @@ public class MusicPlayerActivity extends BaseActivity {
 
     private void initView() {
         mBgView = findViewById(R.id.root_layout);
-        ImageLoaderManager.getInstance().displayImageForViewGroup(mBgView, "https://i.loli.net/2021/05/25/BSn47hCfozEPUtO.jpg");
+        ImageLoaderManager.getInstance().displayImageForViewGroup(mBgView, mAudioBean.albumPic);
         findViewById(R.id.back_view).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

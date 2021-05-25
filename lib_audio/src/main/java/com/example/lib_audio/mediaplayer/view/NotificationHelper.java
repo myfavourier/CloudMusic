@@ -170,7 +170,7 @@ public class NotificationHelper {
       mRemoteViews.setTextViewText(R.id.tip_view, mAudioBean.album);
       ImageLoaderManager.getInstance()
           .displayImageForNotification(AudioHelper.getContext(), mRemoteViews, R.id.image_view,
-              mNotification, NOTIFICATION_ID, "https://i.loli.net/2021/05/25/BSn47hCfozEPUtO.jpg");
+              mNotification, NOTIFICATION_ID, mAudioBean.albumPic);
       //更新收藏view
       if (null != GreenDaoHelper.selectFavourite(mAudioBean)) {
         mRemoteViews.setImageViewResource(R.id.favourite_view, R.mipmap.note_btn_loved);
