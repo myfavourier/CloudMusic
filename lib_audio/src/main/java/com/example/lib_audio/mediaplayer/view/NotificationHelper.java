@@ -66,7 +66,9 @@ public class NotificationHelper {
       //首先创建布局
       initRemoteViews();
       //再构建Notification
-
+      Intent intent = new Intent(AudioHelper.getContext(), MusicPlayerActivity.class);
+      PendingIntent pendingIntent = PendingIntent.getActivity(AudioHelper.getContext(), 0, intent,
+              PendingIntent.FLAG_UPDATE_CURRENT);
 
 
       //适配安卓8.0的消息渠道
@@ -78,7 +80,8 @@ public class NotificationHelper {
         mNotificationManager.createNotificationChannel(channel);
       }
       NotificationCompat.Builder builder =
-          new NotificationCompat.Builder(AudioHelper.getContext(), CHANNEL_ID)
+          new NotificationCompat.Builder(AudioHelper.getContext(), CHANNEL_ID).setContentIntent(
+                  pendingIntent)
               .setSmallIcon(R.mipmap.ic_launcher)
               .setCustomBigContentView(mRemoteViews) //大布局
               .setContent(mSmallRemoteViews); //正常布局，两个布局可以切换
@@ -167,7 +170,7 @@ public class NotificationHelper {
       mRemoteViews.setTextViewText(R.id.tip_view, mAudioBean.album);
       ImageLoaderManager.getInstance()
           .displayImageForNotification(AudioHelper.getContext(), mRemoteViews, R.id.image_view,
-              mNotification, NOTIFICATION_ID, mAudioBean.albumPic);
+              mNotification, NOTIFICATION_ID, "https://i.loli.net/2021/05/25/BSn47hCfozEPUtO.jpg");
       //更新收藏view
       if (null != GreenDaoHelper.selectFavourite(mAudioBean)) {
         mRemoteViews.setImageViewResource(R.id.favourite_view, R.mipmap.note_btn_loved);

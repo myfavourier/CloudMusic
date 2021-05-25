@@ -15,6 +15,7 @@ import com.example.lib_audio.R;
 import com.example.lib_audio.mediaplayer.core.AudioController;
 import com.example.lib_audio.mediaplayer.events.AudioLoadEvent;
 import com.example.lib_audio.mediaplayer.events.AudioPauseEvent;
+import com.example.lib_audio.mediaplayer.events.AudioProgressEvent;
 import com.example.lib_audio.mediaplayer.events.AudioStartEvent;
 import com.example.lib_audio.mediaplayer.model.AudioBean;
 import com.example.lib_image_loader.app.ImageLoaderManager;
@@ -63,7 +64,7 @@ public class BottomMusicView extends RelativeLayout {
     rootView.setOnClickListener(new OnClickListener() {
       @Override public void onClick(View v) {
         //跳到音乐播放Activitity
-        //MusicPlayerActivity.start((Activity) mContext);
+        MusicPlayerActivity.start((Activity) mContext);
       }
     });
     mLeftView = rootView.findViewById(R.id.album_view);
@@ -113,10 +114,10 @@ public class BottomMusicView extends RelativeLayout {
     showPlayView();
   }
 
-//  @Subscribe(threadMode = ThreadMode.MAIN)
-//  public void onAudioProgrssEvent(AudioProgressEvent event) {
-//    //更新当前view的播放进度
-//  }
+  @Subscribe(threadMode = ThreadMode.MAIN)
+  public void onAudioProgrssEvent(AudioProgressEvent event) {
+    //更新当前view的播放进度
+  }
 
   private void showLoadView() {
     //目前loading状态的UI处理与pause逻辑一样，分开为了以后好扩展

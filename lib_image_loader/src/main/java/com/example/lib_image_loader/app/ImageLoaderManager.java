@@ -36,9 +36,8 @@ import io.reactivex.schedulers.Schedulers;
 import static com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions.withCrossFade;
 
 /**
- * 图片加载类，外界唯一调用类,支持为view,notifaication,appwidget加载图片
+ * 图处加载类，外界唯一调用类,直持为view,notifaication,appwidget加载图片
  */
-@SuppressWarnings("deprecation")
 public class ImageLoaderManager {
 
     private ImageLoaderManager() {
@@ -82,7 +81,7 @@ public class ImageLoaderManager {
     }
 
     /**
-     * 加载圆形图片
+     * 带回调的加载图片方法
      */
     public void displayImageForCircle(final ImageView imageView, String url) {
         Glide.with(imageView.getContext())
@@ -90,7 +89,6 @@ public class ImageLoaderManager {
                 .load(url)
                 .apply(initCommonRequestOption())
                 .into(new BitmapImageViewTarget(imageView) {
-                    //将imageview包装成target
                     @Override
                     protected void setResource(final Bitmap resource) {
                         RoundedBitmapDrawable circularBitmapDrawable =
@@ -101,11 +99,6 @@ public class ImageLoaderManager {
                 });
     }
 
-    /**
-     * 完成为viewgroup设置背景并模糊处理
-     * @param group
-     * @param url
-     */
     public void displayImageForViewGroup(final ViewGroup group, String url) {
         Glide.with(group.getContext())
                 .asBitmap()
@@ -120,7 +113,6 @@ public class ImageLoaderManager {
                                 .map(new Function<Bitmap, Drawable>() {
                                     @Override
                                     public Drawable apply(Bitmap bitmap) {
-                                        //将bitmap进行模糊处理并转为drawable
                                         Drawable drawable = new BitmapDrawable(
                                                 Utils.doBlur(res, 100, true)
                                         );
