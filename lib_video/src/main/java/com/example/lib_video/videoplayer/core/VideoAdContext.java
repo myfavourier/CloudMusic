@@ -5,7 +5,6 @@ import android.view.ViewGroup;
 import com.example.lib_video.videoplayer.VideoContextInterface;
 
 /**
- * @author: qndroid
  * @function: 管理slot, 与外界进行通信
  */
 public class VideoAdContext implements VideoAdSlot.SDKSlotListener {

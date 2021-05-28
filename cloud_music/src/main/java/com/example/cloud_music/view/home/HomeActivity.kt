@@ -1,17 +1,24 @@
 package com.example.cloud_music.view.home
 
+import android.content.BroadcastReceiver
 import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import androidx.core.view.GravityCompat
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.alibaba.android.arouter.launcher.ARouter
 import com.example.cloud_music.R
+import com.example.cloud_music.constant.Constant
 import com.example.cloud_music.databinding.ActivityHomeBinding
 import com.example.cloud_music.model.CHANNEL
 import com.example.cloud_music.model.login.LoginEvent
 import com.example.cloud_music.utils.UserManager
+import com.example.cloud_music.utils.Utils
 import com.example.cloud_music.view.login.LoginActivity
 import com.example.cloud_music.view.home.adapter.HomePagerAdapter
 import com.example.lib_audio.app.AudioHelper
@@ -20,6 +27,7 @@ import com.example.lib_audio.mediaplayer.core.MusicService.startMusicService
 import com.example.lib_audio.mediaplayer.model.AudioBean
 import com.example.lib_commin_ui.base.BaseActivity
 import com.example.lib_image_loader.app.ImageLoaderManager
+import com.imooc.lib_update.app.UpdateHelper
 import net.lucode.hackware.magicindicator.ViewPagerHelper
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter
@@ -41,6 +49,9 @@ class HomeActivity :  BaseActivity(),View.OnClickListener {
         CHANNEL.DISCORY,
         CHANNEL.FRIEND
     )
+
+    private val mReceiver: KotUpdateReceiver = KotUpdateReceiver()
+
 
     /*
     * data
@@ -156,8 +167,52 @@ class HomeActivity :  BaseActivity(),View.OnClickListener {
                 }
             }
 
+            R.id.home_qrcode -> {
+                if (hasPermission(*Constant.HARDWEAR_CAMERA_PERMISSION)) {
+                    doCameraPermission()
+                } else {
+                    requestPermission(Constant.HARDWEAR_CAMERA_CODE, *Constant.HARDWEAR_CAMERA_PERMISSION)
+                }
+            }
+
+            R.id.home_music -> {
+                goToMusic()
+            }
+
+            R.id.online_music_view -> {
+                gotoWebView("https://www.imooc.com")
+            }
+
+            R.id.check_update_view -> {
+                checkUpdate()
+            }
 
         }
+    }
+
+    private fun goToMusic() {
+        ARouter.getInstance().build(Constant.Router.ROUTER_MUSIC_ACTIVIYT).navigation()
+    }
+
+    private fun gotoWebView(url: String) {
+        ARouter.getInstance()
+                .build(Constant.Router.ROUTER_WEB_ACTIVIYT)
+                .withString("url", url)
+                .navigation()
+    }
+
+    //启动检查更新
+    private fun checkUpdate() {
+        UpdateHelper.checkUpdate(this)
+    }
+
+    private fun registerBroadcastReceiver() {
+        LocalBroadcastManager.getInstance(this)
+                .registerReceiver(mReceiver, IntentFilter(UpdateHelper.UPDATE_ACTION))
+    }
+
+    private fun unRegisterBroadcastReceiver() {
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver)
     }
 
     override fun onDestroy() {
@@ -174,5 +229,16 @@ class HomeActivity :  BaseActivity(),View.OnClickListener {
         binding.avatrview.visibility = View.VISIBLE
         ImageLoaderManager.getInstance()
                 .displayImageForCircle(binding.avatrview, UserManager.mUser?.data?.photoUrl)
+    }
+
+    /**
+     * 接收Update发送的广播
+     */
+    inner class KotUpdateReceiver : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            //启动安装页面
+            context.startActivity(
+                Utils.getInstallApkIntent(context, intent.getStringExtra(UpdateHelper.UPDATE_FILE_KEY)))
+        }
     }
 }

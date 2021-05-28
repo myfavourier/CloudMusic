@@ -20,7 +20,9 @@ import android.graphics.Point;
 import android.hardware.Camera;
 import android.os.Build;
 import android.util.Log;
-import com.lib_qrcode.zxing.util.Util;
+
+import com.example.lib_qrcode.util.Util;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.regex.Pattern;

@@ -2,15 +2,13 @@ package com.example.lib_audio.mediaplayer.view;
 
 import android.animation.Animator;
 import android.content.Context;
-
-import androidx.viewpager.widget.ViewPager;
-
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.lib_audio.R;
 import com.example.lib_audio.mediaplayer.core.AudioController;
@@ -20,11 +18,11 @@ import com.example.lib_audio.mediaplayer.events.AudioStartEvent;
 import com.example.lib_audio.mediaplayer.model.AudioBean;
 import com.example.lib_audio.mediaplayer.view.adapter.MusicPagerAdapter;
 
-import java.util.ArrayList;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.ArrayList;
 
 /**
  * 音乐播放页面唱针布局
@@ -39,7 +37,6 @@ public class IndictorView extends RelativeLayout implements ViewPager.OnPageChan
     private ImageView mImageView;
     private ViewPager mViewPager;
     private MusicPagerAdapter mMusicPagerAdapter;
-    private ImageView mcircleView;
     /*
      * data
      */
@@ -75,7 +72,6 @@ public class IndictorView extends RelativeLayout implements ViewPager.OnPageChan
     private void initView() {
         View rootView = LayoutInflater.from(mContext).inflate(R.layout.indictor_view, this);
         mImageView = rootView.findViewById(R.id.tip_view);
-        mcircleView = rootView.findViewById(R.id.circle_view);
         mViewPager = rootView.findViewById(R.id.view_pager);
         mViewPager.setOverScrollMode(View.OVER_SCROLL_NEVER);
         mMusicPagerAdapter = new MusicPagerAdapter(mQueue, mContext, null);

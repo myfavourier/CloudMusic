@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import com.imooc.lib_webview.utils.Utils;
+import com.example.lib_webview.utils.Utils;
 
 /**
  * 广告页面布局

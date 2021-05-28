@@ -1,0 +1,131 @@
+[33mcommit 967a31c80c5195fe0e81c0ece2ddd0a8244dc540[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: myfavourier <781007782@qq.com>
+Date:   Fri May 28 19:59:09 2021 +0800
+
+    lib_update
+
+[33mcommit c92b013ef616519728e1c025d25e329facb0ea9e[m
+Author: myfavourier <781007782@qq.com>
+Date:   Fri May 28 19:52:47 2021 +0800
+
+    basic_copy & improve done
+
+[33mcommit c6d36efe3bb7d689c715a6bc842e033c01ad9b58[m
+Author: myfavourier <781007782@qq.com>
+Date:   Fri May 28 17:21:36 2021 +0800
+
+    friend_basic done
+
+[33mcommit b821ee89a235d79501428bed666d9b4f15242a38[m
+Author: myfavourier <781007782@qq.com>
+Date:   Wed May 26 01:03:49 2021 +0800
+
+    test change 2
+
+[33mcommit 325f8d9d6a5d186535a85bd82f190af0abccb43a[m
+Author: myfavourier <781007782@qq.com>
+Date:   Tue May 25 21:24:17 2021 +0800
+
+    test change
+
+[33mcommit 968678e8ecaa2eba66e1109745ba2d5c83b03cc1[m
+Author: myfavourier <781007782@qq.com>
+Date:   Tue May 25 21:23:03 2021 +0800
+
+    lib_audio done
+
+[33mcommit 74908f5872e41b1276edc9a05888d8dc95830869[m
+Author: myfavourier <781007782@qq.com>
+Date:   Mon May 24 23:35:41 2021 +0800
+
+    audio_notification done
+
+[33mcommit 917e7ccfd0e44fb9f661e973bcef3e4642f47f9c[m
+Author: myfavourier <781007782@qq.com>
+Date:   Sun May 23 19:07:11 2021 +0800
+
+    bottom_view done
+
+[33mcommit b2b69a15fb35b60cc2b583ff12cbd79c90f9b326[m
+Author: myfavourier <781007782@qq.com>
+Date:   Sat May 22 21:45:27 2021 +0800
+
+    lib_audio correct
+
+[33mcommit 755c6a22def0b6034a06c227bc12521f7f65ec84[m
+Author: myfavourier <781007782@qq.com>
+Date:   Sat May 22 19:47:24 2021 +0800
+
+    lib_audio_logic done
+
+[33mcommit bf061c3452a6f3ccc7459646eca1419ca769c2d0[m
+Author: myfavourier <781007782@qq.com>
+Date:   Tue May 11 18:52:33 2021 +0800
+
+    login done
+
+[33mcommit fdfd8614f35bca9fa0ac52de4dd0ff65617056c3[m
+Author: myfavourier <781007782@qq.com>
+Date:   Sat May 8 23:33:49 2021 +0800
+
+    login_update
+
+[33mcommit aa0d9b1ff255f332662d4f1e907fcfc8a4a0cc6c[m
+Author: myfavourier <781007782@qq.com>
+Date:   Sat May 1 23:43:21 2021 +0800
+
+    login & server done
+
+[33mcommit 7e0c40dc3a4f5da0c66ff584f0ad0a8f96d31290[m
+Author: myfavourier <781007782@qq.com>
+Date:   Fri Apr 30 21:03:54 2021 +0800
+
+    lib_network & lib_image_load done
+
+[33mcommit 17f9fa75a254c46246eebdc6819116dbb5252ad0[m
+Author: myfavourier <781007782@qq.com>
+Date:   Thu Apr 29 23:29:29 2021 +0800
+
+    Home_architect done
+
+[33mcommit d0e9fbfff135710b6f59f14ea0c6d4dd9a34de39[m
+Author: myfavourier <781007782@qq.com>
+Date:   Thu Apr 29 09:26:39 2021 +0800
+
+    build.gradle_update done
+
+[33mcommit 6142386abee9c2a991d983d65018e7855a881ff0[m
+Author: myfavourier <781007782@qq.com>
+Date:   Thu Apr 29 02:17:08 2021 +0800
+
+    module-build.gradle done
+
+[33mcommit 19d8f59a91dd3303de7663f0c702fd495d6c3b6f[m
+Author: myfavourier <781007782@qq.com>
+Date:   Wed Apr 28 20:29:18 2021 +0800
+
+    project_module done
+
+[33mcommit 0b4b6560ab4f2802537e8ca8f4c7f4d1eaf16702[m
+Author: myfavourier <781007782@qq.com>
+Date:   Wed Apr 21 23:39:58 2021 +0800
+
+    plan
+
+[33mcommit 0508c7a8ce3b3d61923026100e7591da3bba4094[m
+Author: myfavourier <781007782@qq.com>
+Date:   Wed Apr 21 22:39:12 2021 +0800
+
+    first
+
+[33mcommit c417543c07ac3e73fafd007939fc9f1f97717882[m
+Author: myfavourier <781007782@qq.com>
+Date:   Wed Apr 21 20:28:29 2021 +0800
+
+    123
+
+[33mcommit 5b7e0454d192d3de4373ca4841a5d087d6e0631a[m
+Author: myfavourier <58730848+myfavourier@users.noreply.github.com>
+Date:   Wed Apr 21 20:13:38 2021 +0800
+
+    Initial commit

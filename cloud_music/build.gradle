@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.alibaba.arouter'
 }
 
 
@@ -15,6 +16,13 @@ android {
         versionName this.rootProject.android.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+
+        //ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
     }
 
     buildTypes {
@@ -49,11 +57,21 @@ dependencies {
     implementation project(':lib_audio')
     implementation project(':lib_video')
     implementation project(':lib_pullalive')
+    implementation project(':lib_qrcode')
+    implementation project(':lib_share')
+    implementation project(':lib_update')
+    implementation project(':lib_webview')
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
     testImplementation 'junit:junit:4.+'
     //rxjava库
     implementation rootProject.depsLibs.rxjava
     implementation rootProject.depsLibs.rxandroid
+    //占位主工程arouter库
+    //arouter库
+    implementation(rootProject.depsLibs.arouterapi) {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor rootProject.depsLibs.aroutercompiler
     implementation rootProject.depsLibs.eventbus
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

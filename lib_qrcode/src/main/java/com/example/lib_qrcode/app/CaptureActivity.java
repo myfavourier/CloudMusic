@@ -44,6 +44,7 @@ import com.example.lib_commin_ui.base.BaseActivity;
 import com.example.lib_qrcode.R;
 import com.example.lib_qrcode.camera.CameraManager;
 import com.example.lib_qrcode.decode.BeepManager;
+import com.example.lib_qrcode.decode.CaptureActivityHandler;
 import com.example.lib_qrcode.decode.DecodeFormatManager;
 import com.example.lib_qrcode.decode.FinishListener;
 import com.example.lib_qrcode.decode.InactivityTimer;
@@ -105,7 +106,7 @@ import java.util.Vector;
     NATIVE_APP_INTENT, PRODUCT_SEARCH_LINK, ZXING_LINK, NONE
   }
 
-  private com.lib_qrcode.zxing.decode.CaptureActivityHandler handler;
+  private CaptureActivityHandler handler;
   private ViewfinderView viewfinderView;
   private Button mButtonBack;
   private Button createBtn;
@@ -462,7 +463,7 @@ import java.util.Vector;
       return;
     }
     if (handler == null) {
-      handler = new com.lib_qrcode.zxing.decode.CaptureActivityHandler(this, decodeFormats, characterSet);
+      handler = new CaptureActivityHandler(this, decodeFormats, characterSet);
     }
   }
 

@@ -32,7 +32,7 @@ public class VideoAdSlot implements CustomVideoView.ADVideoPlayerListener {
     private SDKSlotListener mSlotListener;
 
     public VideoAdSlot(String adInstance, SDKSlotListener slotLitener) {
-        //ARouter.getInstance().inject(this);
+        ARouter.getInstance().inject(this);
         mXAdInstance = adInstance;
         mSlotListener = slotLitener;
         mParentView = slotLitener.getAdParent();
@@ -85,7 +85,7 @@ public class VideoAdSlot implements CustomVideoView.ADVideoPlayerListener {
         dialog.setSlotListener(mSlotListener);
         dialog.show();
         //全屏暂停音乐播放
-        //mAudioService.pauseAudio();
+        mAudioService.pauseAudio();
     }
 
     private void backToSmallMode(int position) {
@@ -98,7 +98,7 @@ public class VideoAdSlot implements CustomVideoView.ADVideoPlayerListener {
         mVideoView.setListener(this);
         mVideoView.seekAndResume(position);
         //小屏恢复音乐播放
-        //mAudioService.resumeAudio();
+        mAudioService.resumeAudio();
     }
 
     private void bigPlayComplete() {

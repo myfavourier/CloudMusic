@@ -1,14 +1,15 @@
 package com.example.lib_audio.mediaplayer.model;
 
+import com.example.lib_audio.mediaplayer.db.AudioBeanDao;
+import com.example.lib_audio.mediaplayer.db.DaoSession;
+import com.example.lib_audio.mediaplayer.db.FavouriteDao;
+
+import org.greenrobot.greendao.DaoException;
 import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.NotNull;
 import org.greenrobot.greendao.annotation.ToOne;
-import org.greenrobot.greendao.annotation.Generated;
-import org.greenrobot.greendao.DaoException;
-import com.example.lib_audio.mediaplayer.db.DaoSession;
-import com.example.lib_audio.mediaplayer.db.AudioBeanDao;
-import com.example.lib_audio.mediaplayer.db.FavouriteDao;
 
 
 
@@ -74,7 +75,7 @@ import com.example.lib_audio.mediaplayer.db.FavouriteDao;
   @Generated(hash = 910180402) public void setAudioBean(@NotNull AudioBean audioBean) {
     if (audioBean == null) {
       throw new DaoException(
-          "To-one property 'audioId' has not-null constraint; cannot set to-one to null");
+              "To-one property 'audioId' has not-null constraint; cannot set to-one to null");
     }
     synchronized (this) {
       this.audioBean = audioBean;
@@ -117,9 +118,8 @@ import com.example.lib_audio.mediaplayer.db.FavouriteDao;
   }
 
   /** called by internal mechanisms, do not call yourself. */
-  @Generated(hash = 1142028328)
-  public void __setDaoSession(DaoSession daoSession) {
-      this.daoSession = daoSession;
-      myDao = daoSession != null ? daoSession.getFavouriteDao() : null;
+  @Generated(hash = 1142028328) public void __setDaoSession(DaoSession daoSession) {
+    this.daoSession = daoSession;
+    myDao = daoSession != null ? daoSession.getFavouriteDao() : null;
   }
 }

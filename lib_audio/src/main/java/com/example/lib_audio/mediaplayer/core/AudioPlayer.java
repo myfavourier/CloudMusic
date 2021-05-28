@@ -17,7 +17,6 @@ import com.example.lib_audio.mediaplayer.events.AudioLoadEvent;
 import com.example.lib_audio.mediaplayer.events.AudioPauseEvent;
 import com.example.lib_audio.mediaplayer.events.AudioProgressEvent;
 import com.example.lib_audio.mediaplayer.events.AudioReleaseEvent;
-import com.example.lib_audio.mediaplayer.events.AudioReleaserEvent;
 import com.example.lib_audio.mediaplayer.events.AudioStartEvent;
 import com.example.lib_audio.mediaplayer.model.AudioBean;
 
@@ -248,4 +247,3 @@ public class AudioPlayer
     if (mMediaPlayer != null) mMediaPlayer.setVolume(left, right);
   }
 }
-

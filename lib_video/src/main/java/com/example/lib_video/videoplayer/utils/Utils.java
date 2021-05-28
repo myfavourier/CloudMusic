@@ -23,9 +23,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**
- * @author qndroid
- */
 public class Utils {
 
     public static int dip2px(Context context, float dpValue) {

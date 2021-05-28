@@ -243,19 +243,19 @@ public class AudioController {
         load(bean);
     }
 
-//    /**
-//     * 对外提供获取当前播放时间
-//     */
-//    public int getNowPlayTime() {
-//        return mAudioPlayer.getCurrentPosition();
-//    }
-//
-//    /**
-//     * 对外提供获取总播放时间
-//     */
-//    public int getTotalPlayTime() {
-//        return mAudioPlayer.getCurrentPosition();
-//    }
+    /**
+     * 对外提供获取当前播放时间
+     */
+    public int getNowPlayTime() {
+        return mAudioPlayer.getCurrentPosition();
+    }
+
+    /**
+     * 对外提供获取总播放时间
+     */
+    public int getTotalPlayTime() {
+        return mAudioPlayer.getCurrentPosition();
+    }
 
     /**
      * 对外提供的获取当前歌曲信息
@@ -288,4 +288,3 @@ public class AudioController {
         next();
     }
 }
-

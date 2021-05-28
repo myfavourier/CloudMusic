@@ -37,7 +37,7 @@
         android:id="@+id/audio_name_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#DE2B2B"
+        android:textColor="#dddddd"
         android:textSize="16sp"
         tools:text="四块五" />
 
@@ -45,7 +45,7 @@
         android:id="@+id/audio_album_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#C01B1B"
+        android:textColor="#dddddd"
         android:textSize="12sp"
         tools:text="隔避老攀" />
     </LinearLayout>

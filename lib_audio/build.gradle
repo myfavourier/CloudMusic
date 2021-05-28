@@ -25,6 +25,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
         multiDexEnabled true
+        //ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
     }
 
     buildTypes {
@@ -71,11 +77,13 @@ dependencies {
     compileOnly(rootProject.depsLibs.arouterapi) {
         exclude group: 'com.android.support'
     }
+    annotationProcessor rootProject.depsLibs.aroutercompiler
 
     //占位主工程自己源码库
     compileOnly project(':lib_image_loader')
     compileOnly project(':lib_commin_ui')
     compileOnly project(':lib_share')
+    compileOnly project(':lib_base')
 }
 
 greendao {

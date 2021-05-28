@@ -26,7 +26,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 /**
  * 播放器底部View
- */
+         */
 public class BottomMusicView extends RelativeLayout {
 
   private Context mContext;
@@ -87,8 +87,8 @@ public class BottomMusicView extends RelativeLayout {
     mRightView.setOnClickListener(new OnClickListener() {
       @Override public void onClick(View v) {
         //显示音乐列表对话框
-//        MusicListDialog dialog = new MusicListDialog(mContext);
-//        dialog.show();
+        MusicListDialog dialog = new MusicListDialog(mContext);
+        dialog.show();
       }
     });
   }
@@ -141,3 +141,4 @@ public class BottomMusicView extends RelativeLayout {
     }
   }
 }
+

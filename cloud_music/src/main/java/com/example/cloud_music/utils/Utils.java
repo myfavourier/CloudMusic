@@ -1,4 +1,4 @@
-package com.imooc.imooc_voice.utils;
+package com.example.cloud_music.utils;
 
 import android.content.Context;
 import android.content.Intent;
