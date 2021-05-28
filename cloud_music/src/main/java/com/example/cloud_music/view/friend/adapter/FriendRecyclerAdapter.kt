@@ -14,6 +14,7 @@ import com.example.lib_commin_ui.recyclerview.MultiItemTypeAdapter
 import com.example.lib_commin_ui.recyclerview.base.ItemViewDelegate
 import com.example.lib_commin_ui.recyclerview.base.ViewHolder
 import com.example.lib_image_loader.app.ImageLoaderManager
+import com.example.lib_video.videoplayer.core.VideoAdContext
 
 class FriendRecyclerAdapter : MultiItemTypeAdapter<FriendBodyValue> {
 
@@ -79,7 +80,7 @@ class FriendRecyclerAdapter : MultiItemTypeAdapter<FriendBodyValue> {
         override fun convert(holder: ViewHolder, recommandBodyValue: FriendBodyValue, position: Int) {
             val videoGroup = holder.getView<RelativeLayout>(R.id.video_layout)
             //video播放
-            //VideoAdContext(videoGroup, recommandBodyValue.videoUrl)
+            VideoAdContext(videoGroup, recommandBodyValue.videoUrl)
             holder.run {
                 setText(R.id.fansi_view, "${recommandBodyValue.fans}粉丝")
                 setText(R.id.name_view, "${recommandBodyValue.name} 分享视频")
