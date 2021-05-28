@@ -2,6 +2,7 @@ package com.example.cloud_music.model.friend;
 
 
 import com.example.cloud_music.model.BaseModel;
+import com.example.lib_audio.mediaplayer.model.AudioBean;
 
 import java.util.ArrayList;
 
@@ -19,5 +20,5 @@ public class FriendBodyValue extends BaseModel {
   public String videoUrl;
   public String zan;
   public String msg;
-
+  public AudioBean audioBean;
 }

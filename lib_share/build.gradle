@@ -46,6 +46,9 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    compileOnly rootProject.depsLibs.appcompact
+    compileOnly project(':lib_commin_ui')
 }
 
 
@@ -64,5 +67,11 @@ uploadArchives{
                 packaging POM_PACKAGING
             }
         }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
     }
 }

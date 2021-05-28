@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.cloud_music.model.*
 import com.example.cloud_music.view.video.VideoFragment
 import com.example.cloud_music.view.discory.DiscoryFragment
-import com.example.cloud_music.view.friend.adapter.FriendFragment
+import com.example.cloud_music.view.friend.FriendFragment
 import com.example.cloud_music.view.mine.MineFragment
 
 
